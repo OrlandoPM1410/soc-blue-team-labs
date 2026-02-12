@@ -29,7 +29,7 @@ This repository demonstrates:
 - Windows endpoint with Sysmon installed
 - Windows Event Logs
 - Local log collection
-- Manual log analysis (expandable to SIEM in future)
+- Manual + SIEM (Splunk SPL) queries and scheduled alerts
 
 ## Repository Structure
 
