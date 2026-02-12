@@ -20,7 +20,7 @@ This repository demonstrates:
 
 - Log-based detection using Windows Event Logs and Sysmon
 - SOC triage and investigation methodology
-- Detection engineering (Sigma-style logic)
+- Detection engineering (SPL-based logic, Sigma-style methodology)
 - Mapping to MITRE ATT&CK
 - Incident response decision-making
 
@@ -29,7 +29,10 @@ This repository demonstrates:
 - Windows endpoint with Sysmon installed
 - Windows Event Logs
 - Local log collection
-- Manual + SIEM (Splunk SPL) queries and scheduled alerts
+- Local Splunk Enterprise instance (SIEM)
+- SPL-based detection logic
+- Scheduled alert configuration
+
 
 ## Repository Structure
 
@@ -41,7 +44,8 @@ This repository demonstrates:
 
 | Case | Scenario | Techniques | Detections | Status | Environment | 
 |------|----------|------------|------------|------------|------------|
-| 01 | [Suspicious PowerShell execution](case-studies/case-01-suspicious-powershell) | MITRE ATT&CK T1059.001 | Sysmon Event ID 1 (Process Creation) | Implemented and validated | Windows 10 + Sysmon + Splunk Enterprise |
+| 01 | [Suspicious PowerShell execution](case-studies/case-01-suspicious-powershell) | MITRE ATT&CK T1059.001 | PowerShell abuse detection via SPL (Event ID 1)
+ | Implemented and validated | Windows 10 + Sysmon + Splunk Enterprise |
 
 
 
@@ -50,7 +54,8 @@ This repository demonstrates:
 - Add lateral movement case
 - Add persistence detection case
 - Add credential access detection
-- Include SIEM-based queries (KQL/SPL)
+- Expand SIEM-based detections (SPL / KQL equivalents)
+
 
 ## Disclaimer
 
