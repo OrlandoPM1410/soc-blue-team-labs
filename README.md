@@ -5,6 +5,8 @@
 
 Hands-on Blue Team / SOC case studies focused on detection engineering, investigation, and incident response using Windows telemetry.
 
+This project is part of my cybersecurity learning path focused on Blue Team and SOC analyst skills.
+
 ## Objectives
 
 This repository demonstrates:
