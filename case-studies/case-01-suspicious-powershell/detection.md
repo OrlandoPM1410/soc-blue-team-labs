@@ -8,8 +8,9 @@ An alert was triggered based on the execution of `powershell.exe` with suspiciou
 
 Key indicators include:
 - PowerShell execution with encoded or obfuscated commands
-- Unusual command-line flags (e.g., `-EncodedCommand`, `-NoProfile`)
+- Suspicious command-line flags (e.g., `-EncodedCommand`, `-ExecutionPolicy Bypass`, `-NoProfile`)
 - Execution initiated by a non-administrative user
+
 
 ## Detection Logic
 The detection focuses on identifying PowerShell executions that deviate from typical user behavior and match known patterns of abuse.
@@ -55,3 +56,21 @@ MITRE ATT&CK – T1059.001 (PowerShell)
 The detection was validated by executing controlled PowerShell commands using the identified flags. The resulting process creation events (Sysmon Event ID 1) were successfully indexed in Splunk and matched by the detection logic.
 
 This confirms that the end-to-end telemetry pipeline and alerting workflow are functioning correctly.
+
+## Limitations & Future Improvements
+
+### Current Limitations
+
+- The detection relies solely on command-line flags and does not incorporate behavioral correlation (e.g., network activity, parent process anomalies).
+- Legitimate administrative activity may generate similar PowerShell executions, potentially leading to false positives.
+- The alert does not currently differentiate between interactive and automated execution contexts.
+- No threat intelligence enrichment or reputation checks are applied.
+
+### Future Improvements
+
+- Correlate PowerShell execution with suspicious parent processes (e.g., Office applications spawning PowerShell).
+- Detect long or highly obfuscated encoded commands.
+- Incorporate network connection telemetry (Sysmon Event ID 3) to identify potential command-and-control behavior.
+- Add user context analysis (privilege level, frequency baseline).
+- Translate the detection into Sigma format for portability across SIEM platforms.
+
