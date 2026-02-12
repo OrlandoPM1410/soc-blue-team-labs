@@ -41,7 +41,10 @@ This repository demonstrates:
 
 | Case | Scenario | Techniques | Detections |
 |------|----------|------------|------------|
-| 01 | [Suspicious PowerShell execution](case-studies/case-01-suspicious-powershell) | T1059.001 | PowerShell encoded command detection |
+| 01 | [Suspicious PowerShell execution](case-studies/case-01-suspicious-powershell) | MITRE ATT&CK T1059.001 | - Sysmon Event ID 1 (Process Creation)
+- SPL-based detection logic in Splunk
+- Scheduled alert configuration (hourly evaluation)
+- Controlled validation via simulated execution |
 
 
 
