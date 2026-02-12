@@ -1,5 +1,12 @@
 # SOC Blue Team Labs
 
+## Content Overview
+
+- [Lab Environment](#-lab-environment)
+- [Case Studies](#-case-studies)
+- [Detections](#-detections)
+
+
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Status](https://img.shields.io/badge/status-Active%20Development-green)
 
