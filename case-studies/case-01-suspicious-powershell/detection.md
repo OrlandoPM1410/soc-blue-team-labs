@@ -19,3 +19,39 @@ This logic is aligned with MITRE ATT&CK technique:
 
 ## Initial Assessment
 Based on the command-line characteristics and user context, the activity is considered suspicious and requires further investigation.
+
+## Detection Implementation – Splunk
+
+The detection logic was implemented in Splunk as a scheduled alert to identify suspicious PowerShell executions involving commonly abused flags.
+
+### Detection Logic
+
+The following SPL query was used:
+
+index=main source="WinEventLog:Microsoft-Windows-Sysmon/Operational"
+EventCode=1
+Image="*powershell*"
+(CommandLine="*-EncodedCommand*" OR CommandLine="*-NoProfile*" OR CommandLine="*-ExecutionPolicy Bypass*")
+
+### Rationale
+
+The selected flags are frequently observed in script-based execution and adversary tradecraft, particularly when attempting to bypass execution policies or run non-interactive PowerShell commands.
+
+This detection is aligned with:
+
+MITRE ATT&CK – T1059.001 (PowerShell)
+
+### Alert Configuration
+
+- Type: Scheduled
+- Frequency: Every hour
+- Time range: Last 60 minutes
+- Trigger condition: Number of results > 0
+- Severity: Medium
+- Scope: Shared within the application
+
+### Validation
+
+The detection was validated by executing controlled PowerShell commands using the identified flags. The resulting process creation events (Sysmon Event ID 1) were successfully indexed in Splunk and matched by the detection logic.
+
+This confirms that the end-to-end telemetry pipeline and alerting workflow are functioning correctly.
