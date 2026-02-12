@@ -26,12 +26,12 @@ This repository demonstrates:
 
 ## Lab Environment
 
-- Windows endpoint with Sysmon installed
-- Windows Event Logs
-- Local log collection
+- Windows 10 endpoint with Sysmon installed
+- Microsoft-Windows-Sysmon/Operational telemetry
 - Local Splunk Enterprise instance (SIEM)
 - SPL-based detection logic
-- Scheduled alert configuration
+- Scheduled alert configuration and validation
+
 
 
 ## Repository Structure
@@ -44,9 +44,7 @@ This repository demonstrates:
 
 | Case | Scenario | Techniques | Detections | Status | Environment | 
 |------|----------|------------|------------|------------|------------|
-| 01 | [Suspicious PowerShell execution](case-studies/case-01-suspicious-powershell) | MITRE ATT&CK T1059.001 | PowerShell abuse detection via SPL (Event ID 1) | Implemented and validated | Windows 10 + Sysmon + Splunk Enterprise |
-
-
+| 01 | [Suspicious PowerShell execution](case-studies/case-01-suspicious-powershell) | MITRE ATT&CK T1059.001 | PowerShell abuse detection via (SPL + scheduled alert) (Event ID 1) | Implemented and validated | Windows 10 + Sysmon + Splunk Enterprise |
 
 
 ## Roadmap
