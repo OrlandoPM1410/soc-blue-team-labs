@@ -44,7 +44,8 @@ This repository demonstrates:
 
 | Case | Scenario | Techniques | Detections | Status | Environment | 
 |------|----------|------------|------------|------------|------------|
-| 01 | [Suspicious PowerShell execution](case-studies/case-01-suspicious-powershell) | MITRE ATT&CK T1059.001 | PowerShell | Implemented and validated | Windows 10 + Sysmon + Splunk Enterprise |
+| 01 | [Suspicious PowerShell execution](case-studies/case-01-suspicious-powershell) | MITRE ATT&CK T1059.001 | PowerShell abuse detectio via SPL (Event ID 1) | Implemented and validated | Windows 10 + Sysmon + Splunk Enterprise |
+
 
 
 
