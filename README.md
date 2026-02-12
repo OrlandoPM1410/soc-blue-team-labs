@@ -1,5 +1,8 @@
 # SOC Blue Team Labs
 
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Status](https://img.shields.io/badge/status-Active%20Development-green)
+
 Hands-on Blue Team / SOC case studies focused on detection engineering, investigation, and incident response using Windows telemetry.
 
 ## Objectives
