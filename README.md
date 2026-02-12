@@ -1,20 +1,43 @@
-# soc-blue-team-labs
+# SOC Blue Team Labs
 
-Hands-on SOC / Blue Team case studies focused on detection, investigation, and incident response.
+Hands-on Blue Team / SOC case studies focused on detection engineering, investigation, and incident response using Windows telemetry.
 
-## Scope
-This repository documents practical SOC-oriented scenarios using real telemetry (e.g., Windows Event Logs and Sysmon) to simulate, detect, and analyze security-relevant activity.
+## Objectives
 
-The focus is on:
-- Detection engineering
-- Alert triage and investigation
+This repository demonstrates:
+
+- Log-based detection using Windows Event Logs and Sysmon
+- SOC triage and investigation methodology
+- Detection engineering (Sigma-style logic)
+- Mapping to MITRE ATT&CK
 - Incident response decision-making
-- Lessons learned from each scenario
 
-## Structure
-- `lab/` – Overview of the lab environment and tooling
-- `case-studies/` – Documented SOC scenarios (end-to-end analysis)
-- `detections/` – Detection logic and rules used across cases
+## Lab Environment
+
+- Windows endpoint with Sysmon installed
+- Windows Event Logs
+- Local log collection
+- Manual log analysis (expandable to SIEM in future)
+
+## Repository Structure
+
+- `/lab` → Lab environment setup and configuration
+- `/case-studies` → Simulated SOC investigations
+- `/detections` → Detection rules and logic
+
+## Case Studies
+
+| Case | Scenario | Techniques | Detections |
+|------|----------|------------|------------|
+| 01 | Suspicious PowerShell execution | T1059.001 | PowerShell encoded command detection |
+
+## Roadmap
+
+- Add lateral movement case
+- Add persistence detection case
+- Add credential access detection
+- Include SIEM-based queries (KQL/SPL)
 
 ## Disclaimer
-All scenarios are simulated in a controlled lab environment for educational and professional development purposes.
+
+All scenarios were performed in a controlled lab environment.
