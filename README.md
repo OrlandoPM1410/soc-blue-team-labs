@@ -32,7 +32,8 @@ This repository demonstrates:
 
 | Case | Scenario | Techniques | Detections |
 |------|----------|------------|------------|
-| 01 | Suspicious PowerShell execution | T1059.001 | PowerShell encoded command detection |
+| 01 | [Suspicious PowerShell execution](case-studies/case-01.md) | T1059.001 | PowerShell encoded command detection |
+
 
 
 ## Roadmap
