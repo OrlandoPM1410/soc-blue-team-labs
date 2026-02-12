@@ -18,13 +18,13 @@ The objective is to work with real Windows telemetry instead of static datasets.
 
 ## High-Level Architecture
 
-+--------------------------------------------------+
+
 |                 Windows 10 VM                    |
 |--------------------------------------------------|
 |  - Sysmon installed                              |
 |  - Windows Event Logging                         |
 |  - Controlled attack simulation                  |
-+---------------------------+----------------------+
+
                             |
                             | WinEventLog API
                             v
@@ -35,7 +35,7 @@ The objective is to work with real Windows telemetry instead of static datasets.
 |  - SPL detection logic                           |
 |  - Scheduled alerts                              |
 |  - Manual investigation                          |
-+--------------------------------------------------+
+
 
 
 
