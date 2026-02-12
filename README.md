@@ -39,12 +39,9 @@ This repository demonstrates:
 
 ## Case Studies
 
-| Case | Scenario | Techniques | Detections |
-|------|----------|------------|------------|
-| 01 | [Suspicious PowerShell execution](case-studies/case-01-suspicious-powershell) | MITRE ATT&CK T1059.001 | Sysmon Event ID 1 (Process Creation)
-SPL-based detection logic in Splunk
-Scheduled alert configuration (hourly evaluation)
-Controlled validation via simulated execution |
+| Case | Scenario | Techniques | Detections | Status | Environment | 
+|------|----------|------------|------------|------------|------------|
+| 01 | [Suspicious PowerShell execution](case-studies/case-01-suspicious-powershell) | MITRE ATT&CK T1059.001 | Sysmon Event ID 1 (Process Creation) | Implemented and validated | Windows 10 + Sysmon + Splunk Enterprise |
 
 
 
