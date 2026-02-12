@@ -15,7 +15,6 @@ Explain what happened in the lab.
 | Time | Event |
 |------|-------|
 | 10:01 | Suspicious process executed |
-| 10:02 | Network connection established |
 
 ## Investigation Process
 
