@@ -28,7 +28,7 @@ The objective is to work with real Windows telemetry instead of static datasets.
                             |
                             | WinEventLog API
                             v
-+--------------------------------------------------+
+
 |               Splunk Enterprise (SIEM)           |
 |--------------------------------------------------|
 |  - WinEventLog ingestion                         |
