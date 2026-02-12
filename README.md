@@ -3,7 +3,7 @@
 ## Content Overview
 
 - [Lab Environment](#-lab-environment)
-- [Case Studies](#-case-studies)
+- [Case Studies](case-studies)
 - [Detections](#-detections)
 
 
