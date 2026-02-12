@@ -2,9 +2,9 @@
 
 ## Content Overview
 
-- [Lab Environment](#-lab-environment)
+- [Lab Environment](lab)
 - [Case Studies](case-studies)
-- [Detections](#-detections)
+- [Detections](detections)
 
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
