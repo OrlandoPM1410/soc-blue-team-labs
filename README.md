@@ -61,7 +61,31 @@ This repository demonstrates:
 - Networking:
   - Host-Only (192.168.171.0/24) → internal attack simulation
   - NAT → internet access for updates and tools
+ 
+## Architectural Decision: SIEM Deployment Model
 
+In this laboratory environment, Splunk is installed on the same Windows machine 
+that acts as the monitored endpoint.
+
+### Rationale (Lab Context)
+
+For a personal SOC laboratory, this approach is:
+
+- ✔ Resource-efficient (fewer virtual machines required)
+- ✔ Simpler to manage
+- ✔ Easier to maintain and troubleshoot
+- ✔ Suitable for endpoint-focused detection development
+
+### Real-World Considerations
+
+In enterprise environments, SIEM solutions are typically deployed on:
+
+- Dedicated servers
+- Distributed architectures
+- Separate ingestion and search heads
+
+This lab prioritizes reproducibility and hardware efficiency while maintaining 
+detection engineering realism.
 
 ## Disclaimer
 
