@@ -33,11 +33,14 @@ This repository demonstrates:
 
 ## Case Studies
 
+## Case Studies
+
 | Case | Scenario | Techniques | Detections | Status | Environment |
 |------|----------|------------|------------|--------|------------|
-| 01 | [Suspicious PowerShell execution](case-studies/01-suspicious-powershell-execution) | MITRE ATT&CK T1059.001 / T1027 | **TBD** (add PowerShell detection doc) | Implemented and validated | Windows 10 + Sysmon + Splunk Enterprise |
-| 02 | [Internal Network Discovery](case-studies/02-internal-network-discovery) | MITRE ATT&CK T1046 | [Process + Network Correlation](detections/detect-process-network-correlation.md) | Implemented and validated | Windows 10 + Sysmon + Splunk Enterprise |
-| 03 | [Suspicious Outbound Connection (IP:443)](case-studies/03-suspicious-outbound-connection) | MITRE ATT&CK T1071 / T1059 | [Process + Network Correlation](detections/detect-process-network-correlation.md) | Implemented and validated | Windows 10 + Sysmon + Splunk Enterprise |
+| 01 | [Suspicious PowerShell Execution](case-studies/01-suspicious-powershell-execution) | MITRE ATT&CK T1059.001 / T1027 | PowerShell detection (TBD) | Implemented and validated | Windows 10 + Sysmon + Splunk |
+| 02 | [Internal Network Discovery](case-studies/02-internal-network-discovery) | MITRE ATT&CK T1046 | [Process + Network Correlation](detections/detect-process-network-correlation.md) | Implemented and validated | Windows 10 + Sysmon + Splunk |
+| 03 | [Suspicious Outbound Connection](case-studies/03-suspicious-outbound-connection) | MITRE ATT&CK T1071 / T1059 | [Process + Network Correlation](detections/detect-process-network-correlation.md) | Implemented and validated | Windows 10 + Sysmon + Splunk |
+
 
 ## Roadmap
 - Add lateral movement case
