@@ -54,6 +54,11 @@ This repository demonstrates:
 - Add credential access detection
 - Expand SIEM-based detections (SPL / KQL equivalents)
 
+## Lab Architecture (Current)
+- SIEM: Splunk (Host-Only: 192.168.171.14)
+- Endpoint: Windows + Sysmon (Host-Only: 192.168.171.12)
+- Attacker: Kali (Host-Only: 192.168.171.13)
+- Networking: Host-Only (internal) + NAT (internet)
 
 ## Disclaimer
 
