@@ -1,4 +1,4 @@
-## Example Detection – Internal Network Discovery
+# Example Detection – Internal Network Discovery
 
 Technique:
 MITRE ATT&CK – T1046 (Network Service Discovery)
