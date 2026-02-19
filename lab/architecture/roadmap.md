@@ -3,7 +3,7 @@
 ## 1. Current Limitations
 
 - No behavioral correlation across multiple event types
-- No network telemetry enrichment (Sysmon Event ID 3 not yet fully integrated)
+- Limited network telemetry correlation (Event ID 3 used but not correlated across techniques)
 - No baseline-based anomaly detection
 - No threat intelligence enrichment
 - Single monitored endpoint (no multi-host lateral movement yet)
