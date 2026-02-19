@@ -41,6 +41,23 @@ The objective is to work with real Windows telemetry instead of static datasets.
 
 This architecture simulates a minimal SOC monitoring pipeline.
 
+Extended Architecture – Internal Attack Simulation
+
+In addition to the Windows endpoint, an attacker machine (Kali Linux) 
+has been integrated into the lab to simulate internal threat activity.
+
+Updated Architecture:
+
+Kali Linux (Attacker)
+        |
+        | Internal Host-Only Network (192.168.171.0/24)
+        v
+Windows 10 VM
+- Sysmon installed
+- Controlled attack simulation
+- Splunk local instance
+
+
 ---
 
 # 3. Endpoint Configuration
@@ -177,6 +194,21 @@ Alert Configuration:
 
 Validation is performed via controlled execution inside the Windows VM.
 
+Example Detection – Internal Network Discovery
+
+Technique:
+MITRE ATT&CK – T1046 (Network Service Discovery)
+
+Command executed from Kali:
+nmap -sn 192.168.171.0/24
+
+Detection Logic:
+index=main source="WinEventLog:Microsoft-Windows-Sysmon/Operational" EventCode=3
+
+Behavior:
+Multiple network connection attempts originating from 192.168.171.13.
+
+
 ---
 
 # 9. Current Limitations
@@ -185,7 +217,7 @@ Validation is performed via controlled execution inside the Windows VM.
 - No network telemetry enrichment (Sysmon Event ID 3 not yet integrated)
 - No baseline-based anomaly detection
 - No threat intelligence enrichment
-- Single-endpoint environment (no lateral movement simulation)
+- Single monitored endpoint (no multi-host lateral movement yet)
 
 ---
 
@@ -198,6 +230,17 @@ Validation is performed via controlled execution inside the Windows VM.
 - Multi-host simulation
 
 ---
+11. Network Architecture
+
+Host-Only Network: 192.168.171.0/24
+
+Windows + Splunk: 192.168.171.12
+Kali Attacker: 192.168.171.13
+
+All attack traffic is generated internally via the Host-Only segment.
+
+NAT is used only for internet access and updates.
+
 
 This lab serves as a controlled environment to iteratively develop detection engineering skills and SOC analytical thinking.
 
