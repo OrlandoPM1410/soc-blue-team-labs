@@ -59,7 +59,7 @@ Windows 10 VM
 
 ---
 
-# 2. Log Flow
+# 3. Log Flow
 
 The implemented telemetry flow is as follows:
 Process Execution (e.g., PowerShell)
@@ -78,8 +78,6 @@ Scheduled alert evaluation
 
 
 This confirms a complete end-to-end monitoring pipeline.
-
----
 
 
 
