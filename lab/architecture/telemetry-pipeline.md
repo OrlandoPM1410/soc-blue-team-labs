@@ -57,5 +57,30 @@ Windows 10 VM
 - Controlled attack simulation
 - Splunk local instance
 
+---
+
+# 2. Log Flow
+
+The implemented telemetry flow is as follows:
+Process Execution (e.g., PowerShell)
+↓
+Sysmon Event ID 1 generated
+↓
+Windows Event Log (Sysmon channel)
+↓
+Splunk WinEventLog input
+↓
+Indexed into "main"
+↓
+SPL detection logic
+↓
+Scheduled alert evaluation
+
+
+This confirms a complete end-to-end monitoring pipeline.
+
+---
+
+
 
 ---
