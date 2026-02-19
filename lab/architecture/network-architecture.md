@@ -1,4 +1,4 @@
-# 11. Network Architecture
+# Network Architecture
 
 Host-Only Network: 192.168.171.0/24
 
