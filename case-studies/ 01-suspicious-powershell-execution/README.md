@@ -2,12 +2,15 @@
 
 ## Summary
 
-Detected suspicious PowerShell execution using:
+Suspicious PowerShell execution detected using:
 
 - -ExecutionPolicy Bypass
 - -EncodedCommand
 
-Technique mapped to **MITRE ATT&CK T1059.001**.
+Mapped to:
+
+- MITRE ATT&CK T1059.001 – PowerShell
+- MITRE ATT&CK T1027 – Obfuscated / Encoded Files
 
 ---
 
@@ -15,33 +18,41 @@ Technique mapped to **MITRE ATT&CK T1059.001**.
 
 - Windows 10 endpoint
 - Sysmon installed
-- Splunk SIEM
+- Splunk Enterprise (local SIEM)
 - Log source: Microsoft-Windows-Sysmon/Operational
 
 ---
 
 ## Attack Simulation
 
+Executed on the Windows endpoint:
+
 ```powershell
 powershell -ExecutionPolicy Bypass -EncodedCommand ZQBjAGgAbwAgACIASABlAGwAbABvACIA
 ```
 
+Decoded content:
+
+```
+echo "Hello"
+```
+
 ---
 
-## Evidence Collected
+## Telemetry Collected
 
 ### Sysmon Event ID 1 – Process Creation
 
-Key fields:
+Key fields observed:
 
 - Image: powershell.exe
-- CommandLine: includes encoded content
+- CommandLine: contains encoded command
 - ParentImage: explorer.exe (example)
-- User: logged-in user
+- User: interactive logged-in user
 
 ---
 
-## Detection (SPL)
+## Detection Logic (Splunk SPL)
 
 ```spl
 index=main source="WinEventLog:Microsoft-Windows-Sysmon/Operational" EventCode=1 Image="*powershell.exe"
@@ -54,8 +65,8 @@ index=main source="WinEventLog:Microsoft-Windows-Sysmon/Operational" EventCode=1
 
 ## Analyst Triage Workflow
 
-1. Confirm user context (expected admin activity?)
-2. Review parent process
+1. Validate user context (admin or normal user?)
+2. Review ParentImage
 3. Extract Base64 string
 4. Decode payload offline
 5. Determine malicious vs legitimate usage
@@ -64,24 +75,30 @@ index=main source="WinEventLog:Microsoft-Windows-Sysmon/Operational" EventCode=1
 
 ## Risk Assessment
 
-- Encoded commands reduce visibility
-- Often used for malware staging
-- High-confidence suspicious on user workstations
+Encoded PowerShell execution is commonly associated with:
+
+- Fileless malware
+- Initial access payloads
+- Defense evasion
+- Obfuscated script execution
+
+Legitimate usage is uncommon on standard workstations.
 
 ---
 
 ## Conclusion
 
-Suspicious PowerShell execution identified successfully.
-Command-line logging enabled detection.
+The detection successfully identified suspicious PowerShell execution based on command-line analysis.
+
+Sysmon command-line logging enabled accurate attribution and investigation.
 
 ---
 
-## Improvements / Next Iteration
+## Improvements / Future Enhancements
 
 - Add detection for:
-  - `-nop`
-  - `-w hidden`
-  - `IEX`
-- Add correlation with network events (EID 3)
+  - -nop
+  - -w hidden
+  - IEX
+- Add correlation with Sysmon Event ID 3 (network activity)
 - Add base64 length thresholding
