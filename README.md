@@ -55,10 +55,13 @@ This repository demonstrates:
 - Expand SIEM-based detections (SPL / KQL equivalents)
 
 ## Lab Architecture (Current)
-- SIEM: Splunk (Host-Only: 192.168.171.14)
-- Endpoint: Windows + Sysmon (Host-Only: 192.168.171.12)
-- Attacker: Kali (Host-Only: 192.168.171.13)
-- Networking: Host-Only (internal) + NAT (internet)
+
+- Endpoint + SIEM: Windows 10 + Sysmon + Splunk (Host-Only: 192.168.171.12)
+- Attacker: Kali Linux (Host-Only: 192.168.171.13)
+- Networking:
+  - Host-Only (192.168.171.0/24) → internal attack simulation
+  - NAT → internet access for updates and tools
+
 
 ## Disclaimer
 
