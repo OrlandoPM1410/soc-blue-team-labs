@@ -28,7 +28,7 @@ Hosts:
 
 | Machine | IP Address | Role |
 |----------|-------------|------|
-| Splunk | 192.168.171.14 | SIEM |
+| Splunk + Sysmon| 192.168.171.12 | SIEM & Telemetry |
 | Windows Endpoint | 192.168.171.12 | Victim |
 | Kali Linux | 192.168.171.13 | Attacker |
 
