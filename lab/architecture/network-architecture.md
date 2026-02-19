@@ -1,5 +1,5 @@
 Lab Architecture & Telemetry Pipeline
-Purpose
+1. Purpose
 This lab environment was built to understand and validate the complete detection lifecycle in a controlled SOC-like setup:
 
 Endpoint telemetry generation
@@ -9,7 +9,7 @@ Alert configuration
 Controlled validation
 The objective is to work with real Windows telemetry instead of static datasets.
 
-General Architecture
+2. General Architecture
 High-Level Architecture
 Windows 10 VM
 - Sysmon installed
